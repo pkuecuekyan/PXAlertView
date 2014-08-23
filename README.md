@@ -14,11 +14,11 @@ PXAlertView is a block-based, customizable, stylable UIAlertView replacement. It
 
 ## Installation
 
-To use in your own projects, just drag the files in the [PXAlertView+ActivityIndicator folder] (PXAlertView+ActivityIndicator/) into your own project and import [PXAlertView.h](Classes/PXAlertView.h) or, for additional customization, [PXAlertView+Customization.h](Classes/PXAlertView+Customization.h).
+To use in your own projects, just drag the files in the [PXAlertView+ActivityIndicator folder] (PXAlertView+ActivityIndicator/) into your own project and import [PXAlertView.h](PXAlertView+ActivityIndicator/PXAlertView.h) or, for additional customization, [PXAlertView+Customization.h](PXAlertView+ActivityIndicator/PXAlertView+Customization.h).
 
 ## Usage
 
-See [PXAlertView.h](Classes/PXAlertView.h) for the complete API. 
+See [PXAlertView.h](PXAlertView+ActivityIndicator/PXAlertView.h) for the complete API. 
 
 ### Examples
 
