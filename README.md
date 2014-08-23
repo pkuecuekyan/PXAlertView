@@ -1,6 +1,6 @@
-# PXAlertView
+# PXAlertView+ActivityIndicator
 
-PXAlertView is a block-based, customizable, stylable UIAlertView replacement. It fits harmoniously into the iOS 7/8 look-and-feel. Alerts can also be enhanced with any custom UIView. The original [PXAlertView](https://github.com/alexanderjarvis/PXAlertView) has been expanded to include a cancellable pie-style or spinner-style activity indicator. 
+PXAlertView is a block-based, customizable, stylable UIAlertView replacement. It fits harmoniously into the iOS 7/8 look-and-feel. Alerts can also be enhanced with any custom UIView. The original [PXAlertView](https://github.com/alexanderjarvis/PXAlertView) has been expanded to include a cancellable pie-style or spinner-style activity indicator content view. 
 
 ## Preview
 ![Demo Animation](animation.gif)
