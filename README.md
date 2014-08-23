@@ -37,12 +37,12 @@ See [PXAlertView.h](PXAlertView+ActivityIndicator/PXAlertView.h) for the complet
 ```
 
 ```Objective-C
-    PXAlertView *anAlert = [PXAlertView showActivityWithTitle:@"Downloading assets" message:@"Loading" cancelTitle:@"Cancel" activityIndicatorType:PHISpinActivityIndicator completion:^(BOOL cancelled, NSInteger buttonIndex) {
+PXAlertView *anAlert = [PXAlertView showActivityWithTitle:@"Downloading assets" message:@"Loading" cancelTitle:@"Cancel" activityIndicatorType:PHISpinActivityIndicator completion:^(BOOL cancelled, NSInteger buttonIndex) {
         if (cancelled) {
             NSLog(@"Was cancelled");
         }
-    }];
-    [anAlert setCancelButtonBackgroundColor:[UIColor redColor]];
+}];
+[anAlert setCancelButtonBackgroundColor:[UIColor redColor]];
 ```
 
 ## License
