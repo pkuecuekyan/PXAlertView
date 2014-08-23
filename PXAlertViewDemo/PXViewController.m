@@ -5,37 +5,15 @@
 //  Created by Alex Jarvis on 25/09/2013.
 //  Copyright (c) 2013 Panaxiom Ltd. All rights reserved.
 //
+//  Expanded to include ActivityIndicator views (pie, spinner)
+//  and allow for no button (activity) views
+//  (c) 2014, Philipp Kuecuekyan and phi & co. LLC
+//
 
 #import "PXViewController.h"
 #import "PXAlertView+Customization.h"
 
-@interface PXViewController ()
-
-@end
-
 @implementation PXViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
 
 - (IBAction)showSimpleAlertView:(id)sender
 {
@@ -173,6 +151,25 @@
                      cancelButtonTitle:@"Cancel"
                      otherButtonTitles:@"Ok", nil];
     [alertView show];
+}
+
+- (IBAction)showActivitySpinner:(id)sender {
+    PXAlertView *anAlert = [PXAlertView showActivityWithTitle:@"Downloading assets" message:@"Loading" cancelTitle:@"Cancel" activityIndicatorType:PHISpinActivityIndicator completion:^(BOOL cancelled, NSInteger buttonIndex) {
+        if (cancelled) {
+            NSLog(@"Was cancelled");
+        }
+    }];
+    [anAlert setCancelButtonBackgroundColor:[UIColor redColor]];
+
+}
+
+- (IBAction)showActivityPie:(id)sender {
+    PXAlertView *anAlert = [PXAlertView showActivityWithTitle:@"Downloading assets" message:@"Loading" cancelTitle:nil activityIndicatorType:PHIPieActivityIndicator completion:nil];
+    [anAlert setCancelButtonBackgroundColor:[UIColor redColor]];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [anAlert dismissAlertViewWithActivity];
+    });
 }
 
 @end

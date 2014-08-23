@@ -5,10 +5,12 @@
 //  Created by Alex Jarvis on 25/09/2013.
 //  Copyright (c) 2013 Panaxiom Ltd. All rights reserved.
 //
+//  Expanded to include ActivityIndicator views (pie, spinner)
+//  and allow for no button (activity) views
+//  (c) 2014, Philipp Kuecuekyan and phi & co. LLC
+//
 
 #import <UIKit/UIKit.h>
-
-#import "PXAlertView.h"
 
 @interface PXViewController : UIViewController
 

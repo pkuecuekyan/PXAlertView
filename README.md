@@ -1,6 +1,6 @@
 # PXAlertView
 
-PXAlertView is a UIAlertView replacement similar to the style in iOS 7 but with a block based API and the ability to customise the styling and add custom views.
+PXAlertView is a block-based, customizable, stylable UIAlertView replacement. It fits harmoniously into the iOS 7/8 look-and-feel. Alerts can also be enhanced with any custom UIView. [PXAlertView](https://github.com/alexanderjarvis/PXAlertView) has been expanded to include a cancellable pie-style or spinner-style activity indicator. 
 
 ## Preview
 ![Demo Animation](animation.gif)
@@ -8,25 +8,19 @@ PXAlertView is a UIAlertView replacement similar to the style in iOS 7 but with 
 ## Features
 
 * Simple block syntax instead of delegates
-* Animations that match UIAlertView in iOS 7
+* Animations that match iOS 7/8-style UIAlertView
 * Fully customisable
-* Add your own UIView beneath the title
+* Add your own UIView as a contentView
 
 ## Installation
 
-Add the following to your [CocoaPods](http://cocoapods.org/) Podfile
-
-	pod 'PXAlertView', '~> 0.1.0'
-
-or clone as a git submodule,
-
-or just copy ```PXAlertView.h``` and ```.m``` into your project.
+To use in your own projects, just drag the files in the [PXAlertView+ActivityIndicator folder] (PXAlertView+ActivityIndicator/) into your own project and import [PXAlertView.h](Classes/PXAlertView.h) or, for additional customization, [PXAlertView+Customization.h](Classes/PXAlertView+Customization.h).
 
 ## Usage
 
-See [PXAlertView.h](Classes/PXAlertView.h) for the complete API.
+See [PXAlertView.h](Classes/PXAlertView.h) for the complete API. 
 
-### An Example
+### Examples
 
 ```Objective-C
 [PXAlertView showAlertWithTitle:@"The Matrix"
@@ -42,12 +36,16 @@ See [PXAlertView.h](Classes/PXAlertView.h) for the complete API.
                      }];
 ```
 
-## TODO
+```Objective-C
+    PXAlertView *anAlert = [PXAlertView showActivityWithTitle:@"Downloading assets" message:@"Loading" cancelTitle:@"Cancel" activityIndicatorType:PHISpinActivityIndicator completion:^(BOOL cancelled, NSInteger buttonIndex) {
+        if (cancelled) {
+            NSLog(@"Was cancelled");
+        }
+    }];
+    [anAlert setCancelButtonBackgroundColor:[UIColor redColor]];
+``
 
-* Add style that matches iOS 7 exactly
-* Ability to dynamically specify the styling of AlertView: default/dark
-* Allow usage using the same API methods as UIAlertView and delegate.
 
 ## License
 
-PXAlertView is available under the MIT license. See the LICENSE file for more info.
+PXAlertView is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
