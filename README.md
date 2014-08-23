@@ -43,8 +43,7 @@ See [PXAlertView.h](Classes/PXAlertView.h) for the complete API.
         }
     }];
     [anAlert setCancelButtonBackgroundColor:[UIColor redColor]];
-``
-
+```
 
 ## License
 
